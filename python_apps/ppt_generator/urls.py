@@ -5,7 +5,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path("", config, name="ppt_config_generator" ),
-    path("pptgenerator/", pptgenerator, name="ppt_generator")
 ]
 
 if settings.DEBUG:
