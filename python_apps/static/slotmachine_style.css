@@ -1,0 +1,161 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+
+  background: #dceafb;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.doors {
+  display: flex;
+}
+
+.door {
+  background: #ffffff;
+  box-shadow: 0 0 3px 2px rgba(17, 17, 17, 0.4) inset;
+
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+
+  border-radius: 1ex;
+  margin: 1ch;
+}
+
+.boxes {
+  /* transform: translateY(0); */
+  transition: transform 1s ease-in-out;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+button {
+  cursor: pointer;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Add this CSS to your stylesheet or <style> tag in your HTML */
+.buttons {
+  text-align: center;
+}
+
+#spinner, #reseter {
+  width: 100px;
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#spinner:hover, #reseter:hover {
+  background-color: #0056b3;
+}
+
+#reseter {
+  margin-left: 20px;
+  background-color: #dc3545;
+}
+
+#reseter:hover {
+  background-color: #bb2d3b;
+}
+
+
+/* Confetti container */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* Confetti animation */
+.confetti {
+  position: absolute;
+  background-color: #FFD700; /* Confetti color */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform-origin: center;
+  animation: confetti-fall 5s linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+  }
+}
+
+/* Style for the name-container */
+#name-container {
+  visibility: hidden;
+  height: 24px; /* Adjust the height to match the font size */
+}
+
+/* Style for the video container */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Scale video to cover entire container */
+  opacity: 0;
+  z-index: -1;
+}
+
+/* Style for the content container */
+#content {
+  position: relative;
+  z-index: 1;
+  /* Add your styles for the content container */
+}
+
+
+

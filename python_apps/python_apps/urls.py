@@ -22,6 +22,7 @@ from django.conf import settings
 
 urlpatterns = [
     path("", include('raffle.urls'), name="raffle"),
+    path("slotmachine", include('slotmachine.urls'), name="slotmachine"),
     path("dashboard", dashboard, name="dashboard"),
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

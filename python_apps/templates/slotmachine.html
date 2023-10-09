@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block main_content %}
+
+<title>Simple Slot Machine</title>
+
+<link rel="stylesheet" type="text/css" href="/static/slotmachine_style.css">
+<div id="video-container">
+  <video id="background-video" autoplay loop muted playsinline>
+    <source id="content" src="/static/EmiratesStadium.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+
+<div class="container">
+  <div id="app" class="py-5 my-5">
+    <h3 class="text-center py-4" style="font-weight: bold; font-size: 40px;">Raffle</h3>
+    <div id="slots" class="doors" style="opacity: 1;">
+      <div class="door alpha-box">
+        <div class="boxes">
+        </div>
+      </div>
+      <div class="door binary-box">
+        <div class="boxes">
+        </div>
+      </div>
+      <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+      <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+          <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+          <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+          <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+          <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+          <div class="door">
+        <div class="boxes">
+        </div>
+      </div>
+    </div>
+
+    <div id="name-container" class="py-4" style="visibility: hidden;">
+      <div id="name-display" style="font-size: 30px; font-weight: bold;"></div>
+    </div>
+
+    <div id="slot-machine" data-selected-string="{{ selected_string }}"></div>
+    <div id="name" data-selected-string="{{ name }}"></div>
+    <div id="confetti-container"></div>
+    <audio id="backgroundMusic">
+      <source src="/static/Theme_song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="buttons mt-5">
+      <button id="spinner">Spin</button>
+      <button id="reseter">Reset</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script src="/static/slotmachine.js"></script>
+
+{% endblock %}
