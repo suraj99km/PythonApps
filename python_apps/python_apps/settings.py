@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'dashboardapp',
     'ppt_generator',
-    'raffle',
     'slotmachine'
 ]
 
