@@ -13,3 +13,9 @@ def slotmachine(request):
 
     # Render the template with the context data
     return render(request, "slotmachine.html", context)
+
+def raffle_home(request):
+
+    context = {}
+
+    return render(request, "raffle_home.html", context)

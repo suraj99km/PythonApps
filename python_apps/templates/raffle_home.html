@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Football Locations</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .location-button {
+      position: relative;
+      margin: 40px;
+      background-color: #75bbeb;
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 10px;
+      width: 300px; /* Adjust the width as needed */
+      height: 300px; /* Adjust the height as needed */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .location-button:hover {
+      transform: scale(1.1);
+    }
+
+    .location-button .location-text {
+      z-index: 1;
+    }
+
+    .football-image {
+      position: absolute;
+      width: 100%; /* Adjust the size as needed */
+      height: 100%; /* Adjust the size as needed */
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    .location-button:hover .football-image {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .location-button:hover .location-text {
+      color: transparent;
+    }
+
+    .location-text {
+        font-size: large;
+        font-weight: bold;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body>
+
+<div id="container">
+  <a href="slotmachine" class="location-button">
+    <span class="location-text">Delhi</span>
+    <img src='{% static "football1.png" %}' alt="Football Image 1" class="football-image">
+  </a>
+
+  <a href="slotmachine" class="location-button">
+    <span class="location-text">Pune and Mumbai</span>
+    <img src='{% static "football2.png" %}' alt="Football Image 2" class="football-image">
+  </a>
+
+  <a href="slotmachine" class="location-button">
+    <span class="location-text">Chennai</span>
+    <img src='{% static "football3.png" %}' alt="Football Image 3" class="football-image">
+  </a>
+</div>
+
+</body>
+</html>

@@ -8,6 +8,10 @@
   var nameElement = document.getElementById("name");
   var name = nameElement.getAttribute("data-selected-string");
 
+  const nameContainer = document.getElementById("name-container");
+  const slotsContainer = document.getElementById("slots");
+  const doorElements = document.querySelectorAll('.door');
+
   console.log(brid);
 
   const alphas = ["G", "H", "E", "A", "G", "H", "E", "A","G", "H", "E", "A", "G", "H", "E", "A","G", "H", "E", "A"];
@@ -27,7 +31,11 @@
       const boxes = door.querySelector(".boxes");
       const duration = parseInt(boxes.style.transitionDuration);
       boxes.style.transform = "translateY(0)";
-      await new Promise((resolve) => setTimeout(resolve, duration * 100));
+
+      // const randomDelay = Math.floor(Math.random() * 500);
+      // console.log(randomDelay);
+
+      await new Promise((resolve) => setTimeout(resolve, (duration) * 100));
 
       // Check if the .box element exists
       const boxElement = door.querySelector(".box");
@@ -46,13 +54,42 @@
   // Add a 4-second delay before triggering confetti
   setTimeout(triggerConfetti, 4000);
 
+
+
+
+  
   // Delay before displaying the name
   setTimeout(function () {
-    var nameContainer = document.getElementById("name-container");
     var nameDisplayElement = document.getElementById("name-display");
+
     nameDisplayElement.textContent = "Winner: " + name;
     nameContainer.style.visibility = "visible"; // Make the name-container visible
-  }, 4500); // Adjust the delay (in milliseconds) as needed
+  }, 4500);
+  
+// Delay before Text Animation
+  setTimeout(function () {
+  slotsContainer.classList.add("transition-effect");
+  slotsContainer.style.transform = "scale(0.35) translateY(-50%)";
+
+  // Adjust the name container and display element
+  nameContainer.classList.add("transition-effect");
+  // nameContainer.style.height = "100px";
+  nameContainer.style.transform = "scale(1.6) translateY(-40%)";
+
+  // Adjust margin between font and border of the door div
+  doorElements.forEach(door => {
+    const boxElement = door.querySelector(".box");
+    if (boxElement) {
+      boxElement.style.padding = "5px"; // Adjust the padding value
+      boxElement.style.transform = "scale(1.6)"; // Adjust the desired scale
+    }
+  });
+
+  var appContainer = document.getElementById("app");
+  appContainer.style.width = "75%";
+  appContainer.style.borderRadius = "20px";
+  
+  }, 6000);
 
   playBackgroundMusic();
   fadeInVideo();
@@ -86,10 +123,12 @@ function fadeInVideo() {
           clearInterval(fadeInterval); // Stop increasing opacity
       } else {
           opacity += 0.02; // Adjust the increment as needed
-          opacity2 -= 0.006;
+          opacity2 -= 0.003;
           videoContainer.style.opacity = opacity;
           appcontainer.style.opacity = opacity2;
-
+          doorElements.forEach(door => {
+            door.style.opacity = 1;
+          });
       }
   }, 50); // Adjust the interval as needed
 }
@@ -147,6 +186,7 @@ function init(firstInit = true, groups = 1, duration = 1) {
       box.style.width = door.clientWidth + "px";
       box.style.height = door.clientHeight + "px";
       box.textContent = pool[i];
+
       boxesClone.appendChild(box);
     }
     boxesClone.style.transitionDuration = `${duration > 0 ? duration : 1}s`;
