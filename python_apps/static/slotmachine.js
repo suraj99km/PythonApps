@@ -24,8 +24,9 @@
     // Reload the page when the reset button is clicked
     window.location.reload();
   });
-
+  
   async function spin() {
+
     init(false, 1, 4);
     for (const [idxdoor, door] of doors.entries()) {
       const boxes = door.querySelector(".boxes");
@@ -51,13 +52,19 @@
       }
     }
 
+    // // Hide the spin button
+    // const spinButton = document.getElementById("spinner");
+    // spinButton.style.display = "none";
+  
+    // Show the reset button after the spinning is complete
+    setTimeout(function() {
+      const resetButton = document.getElementById("reseter");
+      resetButton.style.display = "inline-block";
+    }, 6000);
+
   // Add a 4-second delay before triggering confetti
   setTimeout(triggerConfetti, 4000);
 
-
-
-
-  
   // Delay before displaying the name
   setTimeout(function () {
     var nameDisplayElement = document.getElementById("name-display");
@@ -95,6 +102,8 @@
   fadeInVideo();
 
   }
+
+
 
   const confetti = new JSConfetti();
 // Function to trigger confetti
@@ -145,7 +154,7 @@ function init(firstInit = true, groups = 1, duration = 1) {
     const boxes = door.querySelector(".boxes");
     const boxesClone = boxes.cloneNode(false);
 
-    const pool = ["?"];
+    var pool = ["?"];
     
     // Determine the pool based on the door index
     if (door.classList.contains("alpha-box")) {

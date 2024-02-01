@@ -67,43 +67,38 @@ body {
   transition: padding 3s ease, transform 3s ease, font-size 3s ease;
 }
 
-button {
+/* button {
   cursor: pointer;
 
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
-}
+} */
 
 /* Add this CSS to your stylesheet or <style> tag in your HTML */
-.buttons {
+.spin-container {
   text-align: center;
 }
 
-#spinner, #reseter {
-  width: 100px;
-  background-color: #007BFF;
-  color: #fff;
-  padding: 10px 20px;
+#spinner {
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-right: 10px;
-  transition: background-color 0.3s ease-in-out;
 }
 
-#spinner:hover, #reseter:hover {
-  background-color: #0056b3;
+.reset-container {
+  position: fixed; top: 10px; right: 10px;
 }
 
-#reseter {
-  margin-left: 20px;
-  background-color: #dc3545;
+#reseter{
+  background-color: transparent;
+  border: none;
+  display: none;
 }
+
 
 #reseter:hover {
-  background-color: #bb2d3b;
+  transform: scale(1.1);
+  transition: .3s ease;
 }
 
 
@@ -124,7 +119,7 @@ button {
   background-color: #FFD700; /* Confetti color */
   width: 10px;
   height: 10px;
-  border-radius: 50%;
+  border-radius: 10%;
   transform-origin: center;
   animation: confetti-fall 5s linear infinite;
 }
