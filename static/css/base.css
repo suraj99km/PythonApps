@@ -1,0 +1,39 @@
+/* base.css */
+
+/* Custom styles for the base template */
+
+.navbar {
+    background-color: #007bff; /* Navbar background color */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #ffffff; /* Navbar text color */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Navbar text color on hover */
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Space between logo and text */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* Color of the navbar toggler icon */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    background-color: #007bff; /* Dropdown menu background color */
+}
+
+.dropdown-item {
+    color: #ffffff; /* Dropdown menu item text color */
+}
+
+.dropdown-item:hover {
+    background-color: #0056b3; /* Background color on hover */
+    color: #ffffff; /* Text color on hover */
+}

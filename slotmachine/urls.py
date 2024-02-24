@@ -4,8 +4,8 @@ from slotmachine.views import slotmachine, raffle_home
 from django.urls import path, include
 
 urlpatterns = [
-    path("", raffle_home, name="home" ),
-    path("slotmachine", slotmachine, name="slotmachine"),
+    path("slotmachine", raffle_home, name="slotmachine" ),
+    path("play", slotmachine, name="play"),
 ]
 
 if settings.DEBUG:

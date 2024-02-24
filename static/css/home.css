@@ -1,0 +1,54 @@
+/* home.css */
+
+/* Custom styles for the home page */
+
+.appcontainer {
+    margin-top: 20px;
+}
+
+.appset {
+    position: relative;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-height {
+    height: 200px; /* Set a fixed height for Image Readers and PPT Automators */
+    overflow: visible; /* Allow contents to overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.legend {
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    background-color: #00aeef;
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.apps {
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 15px 20px;
+    margin-inline: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #00aeef;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.apps:hover {
+    border: 2px solid #00aeef;
+    background-color: transparent;
+    color: #00aeef;
+}
