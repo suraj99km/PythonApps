@@ -25,9 +25,9 @@ STATIC_DIR = os.path.join(BASE_DIR, "static")
 SECRET_KEY = 'django-insecure-rducy-%uacyuvu-_($jax+u9a$fu%voz7%wuo_&%65rwcxzi2n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,7 +52,62 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'python_apps.middleware.RedirectOnErrorMiddleware'
 ]
+
+import logging
+
+class CustomFormatter(logging.Formatter):
+    def format(self, record):
+        # Add timestamp and log message
+        record.message = '[{}] {}'.format(
+            self.formatTime(record, "%Y-%m-%d %H:%M:%S"),
+            record.getMessage()
+        )
+        return super().format(record)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(process)d] %(levelname)s %(name)s: %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+        'custom': {
+            '()': CustomFormatter,
+            'format': '%(asctime)s [%(process)d] %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'custom',  # Use the custom formatter
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'logs/pythonapps.log',
+            'formatter': 'standard',  # Use the standard formatter
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file'],
+            'level': 'INFO',  # Set level to INFO or lower
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'ERROR',  # Log only errors and above for requests
+            'propagate': False,
+        },
+    },
+}
+
+
 
 ROOT_URLCONF = 'python_apps.urls'
 

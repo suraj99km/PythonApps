@@ -4,7 +4,7 @@ from slotmachine.views import slotmachine, raffle_home
 from django.urls import path, include
 
 urlpatterns = [
-    path("slotmachine", raffle_home, name="slotmachine" ),
+    path("", raffle_home, name="raffle_home" ),
     path("play", slotmachine, name="play"),
 ]
 

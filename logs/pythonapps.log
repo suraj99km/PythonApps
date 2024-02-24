@@ -1,0 +1,10 @@
+2024-02-24 19:55:50 [1396] INFO django.utils.autoreload: Watching for file changes with StatReloader
+2024-02-24 19:55:52 [1396] INFO django.utils.autoreload: /Users/surajkumar/VSProjects/PythonHub/PythonApps/python_apps/settings.py changed, reloading.
+2024-02-24 19:55:52 [1399] INFO django.utils.autoreload: Watching for file changes with StatReloader
+2024-02-24 19:55:53 [1399] INFO django.server: "GET / HTTP/1.1" 200 4672
+2024-02-24 19:55:53 [1399] INFO django.server: "GET /static/css/base.css HTTP/1.1" 200 828
+2024-02-24 19:55:53 [1399] INFO django.server: "GET /static/assets/pptconfig.png HTTP/1.1" 200 31842
+2024-02-24 19:55:53 [1399] INFO django.server: "GET /static/assets/pdftoexcel.png HTTP/1.1" 200 153921
+2024-02-24 19:56:33 [1399] INFO django.server: "GET / HTTP/1.1" 200 4672
+2024-02-24 19:56:41 [1399] INFO django.server: "GET /slotmachine/ HTTP/1.1" 302 0
+2024-02-24 19:56:41 [1399] INFO django.server: "GET / HTTP/1.1" 200 4672
