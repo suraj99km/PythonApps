@@ -3,7 +3,7 @@
 /* Custom styles for the base template */
 
 .navbar {
-    background-color: #007bff; /* Navbar background color */
+    background-color: #00aeef; /* Navbar background color */
 }
 
 .navbar-brand,
@@ -36,4 +36,8 @@
 .dropdown-item:hover {
     background-color: #0056b3; /* Background color on hover */
     color: #ffffff; /* Text color on hover */
+}
+
+.footer {
+    background-color: #00aeef;
 }
